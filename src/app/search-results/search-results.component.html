@@ -1,0 +1,46 @@
+<div style="border: 1px solid hotpink;margin-top: 15px;" >
+    
+    
+
+    <div class="card" >
+        <div class="card-body">
+            <span (click)="toggleShowMore()">
+                <svg *ngIf="showMore" style="float: right; cursor:pointer;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                </svg>
+                <svg *ngIf="!showMore" style="float: right; cursor:pointer;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </span>
+
+            
+            <h5 class="card-title">{{result.navn | titlecase}} </h5>
+            <p class="card-text">org.nr. {{result.organisasjonsnummer}}</p>
+        </div>
+    </div>
+    <div *ngIf='showMore' style="display:flex; flex-direction:row;border-top: 1px solid hotpink;">
+        <div class="card" style="width: 50%;" >
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let addr of result.forretningsadresse?.adresse" class="list-group-item" >{{addr }}</li>
+              <li class="list-group-item">{{result.forretningsadresse?.kommunenummer}} {{result.forretningsadresse?.kommune | titlecase}}</li>
+              
+            </ul>
+           
+          
+        </div>
+        <div class="card" style="width: 50%;" >
+            <ul class="list-group list-group-flush">
+            
+                <li class="list-group-item">{{result.organisasjonsform.beskrivelse}}</li>
+            
+                <li class="list-group-item">{{result.naeringskode1?.beskrivelse}}</li>
+              
+            </ul>
+            
+          
+        </div>
+    </div>
+    
+
+
+</div>

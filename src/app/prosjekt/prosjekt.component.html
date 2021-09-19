@@ -1,0 +1,25 @@
+<div class="main">
+    
+    <div class="container" style=" background:#cccccc;padding-top: 20px;padding-bottom: 15px; margin-top: 20px;margin-bottom: 20px;;">
+
+        <form [formGroup]="form" (submit)="save()">
+            <div class="input-group mb-3 prosjektInput">
+                
+                <input formControlName="tittel" type="text" class="form-control" placeholder="Tittel">
+                <input formControlName="beskrivelse" type="text" class="form-control" placeholder="Beskrivelse">
+                <input formControlName="prosjektstart" type="date" id="start" name="trip-start" min="1970-01-01" max="2070-01-01" placeholder="Prosjektstart">
+                
+                <button (click)="save()" class="btn btn-outline-primary" type="button">Save</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="container" style=" background:#cccccc;padding-top: 20px;padding-bottom: 20px; margin-top: 20px;margin-bottom: 20px; ;" *ngFor="let item of projekts">
+        {{item.tittel}}
+        <button class="btn btn-outline-primary" style="float: right;" (click)="delete(item)">delete</button>
+
+    </div>
+
+    
+
+</div>

@@ -1,0 +1,61 @@
+<div class="main">
+
+    <div class="container" style=" background:#cccccc;padding-top: 20px; margin-top: 20px;margin-bottom: 20px;;">
+        <div>
+            <form [formGroup]="form" (submit)="getEnhet()">
+            <div class="input-group mb-3">
+                <input formControlName="searchInput" type="text" class="form-control" placeholder="Search" aria-label="Search Enhetsregisteret" aria-describedby="button-addon2" (keypress.enter)="getEnhet()">
+                <button (click)="getEnhet()" class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+              </div>
+    
+              <div class="form-check form-check-inline">
+                  
+                <input formControlName="enhetType" class="form-check-input" type="radio" name="enhetType" id="hovedenhet" value="enheter" >
+                <label class="form-check-label" for="hovedenhet">
+                    Hovedenhet
+                </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input formControlName="enhetType" class="form-check-input" type="radio" name="enhetType" id="underenhet" value="underenheter">
+                <label class="form-check-label" for="underenhet">
+                    Underenhet
+                </label>
+              </div>
+            </form>
+    
+            
+    
+        </div>
+        <div *ngIf="result?._embedded?.enheter" style="margin-bottom: 25px;">
+            <app-search-results [result]="item" *ngFor="let item of result._embedded.enheter"> </app-search-results>
+        </div>
+        <div *ngIf="result?._embedded?.underenheter" style="margin-bottom: 25px;">
+            <app-search-results [result]="item" *ngFor="let item of result._embedded.underenheter"> </app-search-results>
+        </div>
+    
+    
+        <div *ngIf="result?._links" style="justify-content: center; display: flex; margin-bottom: 25px;" class="pagination">
+    
+            <svg (click)="getEnhet()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              
+            </svg>
+    
+            <svg (click)="getPrev()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            <span>{{page+1}}/{{last+1}}</span>
+            <svg (click)="getNext()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+            
+            <svg (click)="getLast()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+              </svg>
+        </div>
+    
+        
+    </div>
+</div>
