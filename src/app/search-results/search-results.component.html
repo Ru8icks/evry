@@ -1,4 +1,4 @@
-<div style="border: 1px solid hotpink;margin-top: 15px;" >
+<div style="border: 1px solid #5BC0BE;margin-top: 15px;" >
     
     
 
@@ -18,7 +18,7 @@
             <p class="card-text">org.nr. {{result.organisasjonsnummer}}</p>
         </div>
     </div>
-    <div *ngIf='showMore' style="display:flex; flex-direction:row;border-top: 1px solid hotpink;">
+    <div *ngIf='showMore' style="display:flex; flex-direction:row;border-top: 1px solid #5BC0BE;">
         <div class="card" style="width: 50%;" >
             <ul class="list-group list-group-flush">
               <li *ngFor="let addr of result.forretningsadresse?.adresse" class="list-group-item" >{{addr }}</li>
