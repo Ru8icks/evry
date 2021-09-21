@@ -2,8 +2,11 @@ You will need angular cli, mongodb, and nodemon.
 
 
 npm install @angular/cli
+
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+
 npm install -g nodemon
+
 
 to start run npm install
 then cd /server && nodemon server.js and
