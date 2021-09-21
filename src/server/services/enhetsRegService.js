@@ -6,7 +6,7 @@ function getEnhet(req, res){
     const enhet = req.params.enhet
     axios.get(`https://data.brreg.no/enhetsregisteret/api/${enhet}?navn=${name}`)
     .then(response=>{
-      console.log(response.data)
+      console.log(response.data, "test")
       res.status(200).json( response.data);
     })
     .catch(err => {
