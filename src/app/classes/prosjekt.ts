@@ -3,4 +3,8 @@ export class Prosjekt {
     tittel!: string;
     beskrivelse!: string;
     prosjektstart!: string;
+    navn!: string;
+    organisasjonsnummer!: string;
+    postadresse!: string[];
+    kode!: string;
 }

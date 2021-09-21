@@ -33,7 +33,7 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-const port = process.env.PORT || '8000';
+const port = process.env.PORT || '7979';
 app.set('port', port);
 
 const server = http.createServer(app);

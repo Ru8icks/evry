@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EnhetService } from '../services/enhet.service';
 import {FormControl, FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'app-search',
@@ -20,8 +21,14 @@ export class SearchComponent implements OnInit {
     enhetType: new FormControl('enheter'),
     searchInput:new FormControl(''),
   });
+  @Output() newItemEvent = new EventEmitter<any>();
   ngOnInit(): void {
     
+  }
+
+  selectOrg(item:any){
+    console.log(item)
+    this.newItemEvent.emit(item);
   }
  
   getEnhet(){

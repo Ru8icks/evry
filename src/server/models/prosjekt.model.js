@@ -8,7 +8,10 @@ const prosjektSchema = new Schema(
     tittel: String,
     beskrivelse: String,
     prosjektstart: String,
-    
+    navn: String,
+    organisasjonsnummer: String,
+    postadresse: [String],
+    sektorkode: String,
   },
   {
     collection: 'prosjekt'

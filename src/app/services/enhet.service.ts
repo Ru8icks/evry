@@ -10,10 +10,10 @@ export class EnhetService {
   
 
   getEnheter(name: string, enhetType:string  ) {
-    return this.http.get(`http://localhost:8000/api/enhet/${name}/${enhetType}` )
+    return this.http.get(`http://localhost:7979/api/enhet/${name}/${enhetType}` )
   }
   getEnheterPage(name: string, page: number, enhetType:string ) {
-    return this.http.get(`http://localhost:8000/api/enhet/${name}/${page}/${enhetType}` )
+    return this.http.get(`http://localhost:7979/api/enhet/${name}/${page}/${enhetType}` )
   }
 
 }

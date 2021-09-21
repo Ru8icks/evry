@@ -27,10 +27,10 @@
     
         </div>
         <div *ngIf="result?._embedded?.enheter" style="margin-bottom: 25px;">
-            <app-search-results [result]="item" *ngFor="let item of result._embedded.enheter"> </app-search-results>
+            <app-search-results (click)="selectOrg(item)" [result]="item" *ngFor="let item of result._embedded.enheter"> </app-search-results>
         </div>
         <div *ngIf="result?._embedded?.underenheter" style="margin-bottom: 25px;">
-            <app-search-results [result]="item" *ngFor="let item of result._embedded.underenheter"> </app-search-results>
+            <app-search-results (click)="selectOrg(item)"  [result]="item" *ngFor="let item of result._embedded.underenheter"> </app-search-results>
         </div>
     
     

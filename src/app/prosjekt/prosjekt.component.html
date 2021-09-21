@@ -5,15 +5,19 @@
         <form [formGroup]="form" (submit)="save()">
             <div class="input-group mb-3 prosjektInput">
                 
-                <input formControlName="tittel" type="text" class="form-control" placeholder="Tittel">
-                <input formControlName="beskrivelse" type="text" class="form-control" placeholder="Beskrivelse">
-                <input formControlName="prosjektstart" type="date" id="start" name="trip-start" min="1970-01-01" max="2070-01-01" placeholder="Prosjektstart">
-                
+                <input required formControlName="tittel" type="text" class="form-control" placeholder="Tittel"  >
+                <input formControlName="beskrivelse" type="text" class="form-control" placeholder="Beskrivelse" required maxlength="200">
+                <input formControlName="prosjektstart" type="date" id="start" name="trip-start" min={{min}} max="2070-01-01" placeholder="Prosjektstart" required>
                 <button (click)="save()" class="btn btn-outline-primary" type="button">Save</button>
             </div>
             
+            <app-search-results *ngIf="this.enhet" [result]="this.enhet" ></app-search-results>
         </form>
+        <div  *ngIf="this.noValid"> <p>please, fill in all fields</p></div>
+
+        <app-search  (newItemEvent)="addItem($event)"></app-search>
     </div>
+    
     <div class="container" style=" background:#cccccc;padding-top: 20px;padding-bottom: 20px; margin-top: 20px;margin-bottom: 20px; ;" *ngFor="let item of projekts">
         {{item.tittel}}
         <button class="btn btn-outline-danger" style="float: right;" (click)="delete(item)">delete</button>
@@ -23,3 +27,10 @@
     
 
 </div>
+
+
+Av organisasjonsdata ønsker vi å lagre
+Navn
+Organisasjonsnummer
+Postadresse
+Sektorkode
