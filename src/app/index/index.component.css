@@ -1,0 +1,59 @@
+.grid {
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    grid-gap: 4em;
+  }
+  
+  header, footer,article {
+    grid-column: 1 / 4;
+  }
+
+  
+  /* Demo Specific Styles */
+  body {
+    margin: 0 auto;
+    max-width: 56em;
+    padding: 1em 0;
+  }
+  
+  header,
+  article,
+  footer {
+    border-radius: 5px;
+    background: #a3a3a3;
+    box-shadow:  5px 5px 10px #757575,
+    -5px -5px 10px #d1d1d1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  header{
+    height: 15vh;
+  }
+  article{
+      height: 75vh;
+  }
+
+  footer{
+      font-size: x-small;
+  }
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+ 
+  .button:hover {
+    background-color: #3e8e41;
+    
+    cursor: pointer;
+  }

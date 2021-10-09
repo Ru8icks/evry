@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const enhetsRegService = require('../services/enhetsRegService.js');
 const prosjektService = require('../services/prosjektService.js'); 
+const weatherService = require('../services/weather.service');
+
 
 router.get('/', function (req, res) {
     res.send('API works!');
@@ -31,6 +33,11 @@ router.delete('/prosjekt/:uid', (req, res) => {
     console.log("test prosjekt delete")
     prosjektService.deleteProsjekt(req, res);
   });
+
+  router.get('/weather/:city', (req, res) => {
+    weatherService.getWeather(req, res);
+  
+});
   
   
 

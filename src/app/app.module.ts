@@ -10,6 +10,9 @@ import { EnhetService } from './services/enhet.service';
 import { WildcardComponent } from './wildcard/wildcard.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { ProsjektComponent } from './prosjekt/prosjekt.component';
+import { WeatherComponent } from './weather/weather.component';
+import { IndexComponent } from './index/index.component';
+
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import { ProsjektComponent } from './prosjekt/prosjekt.component';
     WildcardComponent,
     SearchResultsComponent,
     ProsjektComponent,
+    IndexComponent,
+    WeatherComponent,
+
     
   ],
   imports: [

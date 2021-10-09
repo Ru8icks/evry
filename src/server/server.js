@@ -16,7 +16,7 @@ var corsOptions = {
 app.use(cors(corsOptions))
 
 app.use(express.json());
-app.use(express.static(path.join(root, 'dist/evry')));
+app.use(express.static(path.join(root, 'dist/refresh')));
 
 app.use('/api', routes);
 
